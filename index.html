@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A2744">
+
+<title>МедРедакция — AI-копирайтер медицинских статей с источниками (PubMed, ESMO, Минздрав РФ)</title>
+<meta name="description" content="МедРедакция — российский AI-сервис для медицинского копирайтинга. Три агента (исследователь, автор, корректор) создают статьи с клинически точными данными и ссылками на PubMed, ESMO, NCCN, Минздрав РФ. Бесплатный тариф — 1 статья в месяц.">
+<meta name="keywords" content="медицинский копирайтинг, ИИ копирайтер, медицинские статьи, AI для медицины, контент для клиник, медицинский текст, копирайтинг PubMed, редактор медицинских текстов, медицинский контент для сайта, SEO медицинского сайта">
+<meta name="author" content="ООО «Первый ИТ Альянс»">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="yandex-verification" content="">
+<meta name="google-site-verification" content="">
+
+<!-- Canonical + language -->
+<link rel="canonical" href="https://www.medredactor.ru/">
+<link rel="alternate" hreflang="ru" href="https://www.medredactor.ru/">
+<link rel="alternate" hreflang="x-default" href="https://www.medredactor.ru/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="МедРедакция">
+<meta property="og:title" content="МедРедакция — AI-копирайтер медицинских статей">
+<meta property="og:description" content="Три ИИ-агента создают статьи с клинически точными данными и ссылками на PubMed, ESMO, Минздрав РФ. От 0 ₽/мес.">
+<meta property="og:url" content="https://www.medredactor.ru/">
+<meta property="og:image" content="https://www.medredactor.ru/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="МедРедакция — AI-копирайтер медицинских статей">
+<meta name="twitter:description" content="Три ИИ-агента создают медицинские статьи с источниками из PubMed, ESMO, Минздрав РФ.">
+<meta name="twitter:image" content="https://www.medredactor.ru/og.png">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%231A2744'/%3E%3Cstop offset='100%25' stop-color='%232D3F66'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23bg)'/%3E%3Crect x='24' y='12' width='16' height='40' rx='3' fill='%23C8334E'/%3E%3Crect x='12' y='24' width='40' height='16' rx='3' fill='%23C8334E'/%3E%3Cpath d='M38 38 L52 52 L48 56 L34 42 Z' fill='%23F5E6D0' opacity='0.9'/%3E%3Cpath d='M52 52 L48 56 L50 58 L54 54 Z' fill='%23B45309'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Schema.org JSON-LD · Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "МедРедакция",
+  "alternateName": "MedRedaktsiya",
+  "legalName": "Общество с ограниченной ответственностью «Первый ИТ Альянс»",
+  "url": "https://www.medredactor.ru/",
+  "logo": "https://www.medredactor.ru/logo.png",
+  "foundingDate": "2005-02-24",
+  "founder": {
+    "@type": "Person",
+    "name": "Афанасьев Дмитрий Геннадиевич"
+  },
+  "taxID": "7725532894",
+  "vatID": "7725532894",
+  "identifier": [
+    { "@type": "PropertyValue", "name": "ИНН", "value": "7725532894" },
+    { "@type": "PropertyValue", "name": "КПП", "value": "772501001" },
+    { "@type": "PropertyValue", "name": "ОГРН", "value": "1057746309323" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Ленинская Слобода, д. 9, пом. 2, ком. 28-4, оф. 6",
+    "addressLocality": "Москва",
+    "postalCode": "115280",
+    "addressCountry": "RU"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "telephone": "+7-495-648-68-37",
+    "email": "info@1it.ru",
+    "availableLanguage": ["ru"]
+  },
+  "sameAs": ["https://www.1it.ru/"]
+}
+</script>
+
+<!-- Schema.org JSON-LD · SoftwareApplication (продукт) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "МедРедакция",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "AI-copywriting",
+  "operatingSystem": "Web",
+  "inLanguage": "ru",
+  "description": "SaaS-сервис для создания медицинских статей с помощью трёх ИИ-агентов: исследователь собирает данные из PubMed, ESMO, NCCN, Минздрав РФ; автор пишет структурированный текст; корректор проверяет фактологию и цитаты.",
+  "url": "https://www.medredactor.online/",
+  "author": {
+    "@type": "Organization",
+    "name": "ООО «Первый ИТ Альянс»"
+  },
+  "offers": [
+    { "@type": "Offer", "name": "Free",     "price": "0",     "priceCurrency": "RUB", "description": "1 статья в месяц",   "url": "https://www.medredactor.online/pricing" },
+    { "@type": "Offer", "name": "Solo",     "price": "1490",  "priceCurrency": "RUB", "description": "20 статей в месяц",  "url": "https://www.medredactor.online/pricing" },
+    { "@type": "Offer", "name": "Business", "price": "4990",  "priceCurrency": "RUB", "description": "100 статей в месяц", "url": "https://www.medredactor.online/pricing" },
+    { "@type": "Offer", "name": "Agency",   "price": "12990", "priceCurrency": "RUB", "description": "300 статей в месяц", "url": "https://www.medredactor.online/pricing" }
+  ],
+  "featureList": [
+    "Три агента: Исследователь, Автор, Корректор",
+    "Источники: PubMed, ESMO, NCCN, Минздрав РФ, CyberLeninka",
+    "Цитируемость [N] в тексте",
+    "Проверка структуры и ключевых слов",
+    "Экспорт в DOCX",
+    "Встроенный чат для правок"
+  ]
+}
+</script>
+
+<!-- Schema.org JSON-LD · FAQPage (GEO / Answer Box) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что такое МедРедакция?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "МедРедакция — это российский онлайн-сервис для создания медицинских статей с помощью искусственного интеллекта. Три AI-агента (Исследователь, Автор и Корректор) собирают данные из авторитетных медицинских источников, пишут статью и проверяют её на фактологическую точность. Оплата в рублях через ЮKassa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Из каких источников берутся данные для статей?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PubMed, Cochrane Library, ESMO, NCCN, ASCO, UpToDate, Минздрав РФ, РосОнкоВеб, CyberLeninka, eLibrary, WHO, CDC. Каждое утверждение в статье сопровождается ссылкой на источник [N]."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Для кого подходит сервис?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для медицинских копирайтеров на фрилансе, штатных редакторов клиник и фармкомпаний, контент-агентств, которые пишут тексты для медицинских сайтов и блогов. Сервис полезен там, где важны точные данные со ссылками, а не просто красивый текст."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоит использование?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Есть бесплатный тариф Free — 1 статья в месяц. Платные: Solo — 1 490 ₽/мес за 20 статей, Business — 4 990 ₽/мес за 100 статей, Agency — 12 990 ₽/мес за 300 статей. Оплата картой или СБП через ЮKassa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли проверить статью перед публикацией?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Встроенный Корректор оценивает медицинскую точность, перекрёстно сверяет каждую цитату [N] со списком источников, проверяет соответствие клиническим гайдлайнам. Статья не помечается как готовая, пока редактор не подтвердит качество."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "В каком формате можно выгрузить готовую статью?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DOCX (Microsoft Word) с сохранением заголовков, списков, ссылок на источники. Удобно вставлять в CMS сайта или отправлять на редактуру. Готовится HTML-экспорт для тарифа Business."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Безопасно ли использовать сервис для медицинской редактуры?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Сервис выдаёт черновик для дальнейшей редакторской проверки. Окончательную ответственность за медицинскую точность и соответствие ФЗ «О рекламе» и 38-ФЗ о рекламе лекарств несёт публикующий редактор. Все сгенерированные тексты должны быть проверены специалистом перед публикацией."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Schema.org JSON-LD · WebSite + Breadcrumbs -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "МедРедакция",
+  "url": "https://www.medredactor.ru/",
+  "inLanguage": "ru",
+  "publisher": { "@type": "Organization", "name": "ООО «Первый ИТ Альянс»" }
+}
+</script>
+<style>
+  /* PRELOADER */
+  .preloader{position:fixed;inset:0;z-index:9999;background:var(--cream,#F5F0E8);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease}
+  .preloader.done{opacity:0;visibility:hidden;pointer-events:none}
+  .preloader-icon{width:64px;height:64px;opacity:0;transform:scale(0.85);animation:plIn .5s .1s ease forwards}
+  .preloader-name{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:#1A2744;letter-spacing:0.04em;margin-top:20px;opacity:0;animation:plIn .5s .4s ease forwards}
+  .preloader-bar{width:100px;height:3px;background:rgba(26,39,68,0.1);border-radius:3px;margin-top:20px;overflow:hidden;opacity:0;animation:plIn .4s .5s ease forwards}
+  .preloader-bar::after{content:'';display:block;width:0;height:100%;background:linear-gradient(90deg,#C8334E,#A0253C);border-radius:3px;animation:plFill 1.2s .6s ease forwards}
+  @keyframes plIn{to{opacity:1;transform:scale(1)}}
+  @keyframes plFill{to{width:100%}}
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1A2744;
+    --navy2: #2D3F66;
+    --red: #C8334E;
+    --red2: #A0253C;
+    --cream: #F5F0E8;
+    --cream2: #EDE8DF;
+    --text: #1A2744;
+    --muted: #7A8599;
+    --border: rgba(26,39,68,0.1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Golos Text', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* — NAV — */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(245,240,232,0.85);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid var(--border);
+    transition: padding 0.3s, box-shadow 0.3s;
+  }
+  nav.scrolled {
+    padding: 12px 48px;
+    box-shadow: 0 2px 20px rgba(26,39,68,0.08);
+  }
+  .nav-logo {
+    font-family: 'Literata', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  .nav-logo span { color: var(--red); }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--muted); transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a:not(.nav-cta)::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+    height: 1.5px; background: var(--red); transform: scaleX(0);
+    transition: transform 0.25s ease; transform-origin: right;
+  }
+  .nav-links a:not(.nav-cta):hover::after {
+    transform: scaleX(1); transform-origin: left;
+  }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-cta {
+    background: var(--red); color: #fff !important;
+    padding: 9px 22px; border-radius: 6px;
+    font-size: 11px !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: var(--red2) !important; color: #fff !important; transform: translateY(-1px); }
+
+  /* Mobile menu */
+  .nav-burger {
+    display: none; background: none; border: none; cursor: pointer;
+    width: 32px; height: 24px; position: relative; flex-shrink: 0;
+  }
+  .nav-burger span {
+    display: block; width: 100%; height: 2px; background: var(--navy);
+    position: absolute; left: 0; transition: all 0.3s;
+  }
+  .nav-burger span:nth-child(1) { top: 2px; }
+  .nav-burger span:nth-child(2) { top: 11px; }
+  .nav-burger span:nth-child(3) { top: 20px; }
+  .nav-burger.open span:nth-child(1) { top: 11px; transform: rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
+
+  .mobile-menu {
+    display: none; position: fixed; top: 60px; left: 0; right: 0;
+    background: rgba(245,240,232,0.98); backdrop-filter: blur(20px);
+    padding: 24px; flex-direction: column; gap: 16px;
+    border-bottom: 1px solid var(--border);
+    transform: translateY(-10px); opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    z-index: 99;
+  }
+  .mobile-menu.open { transform: translateY(0); opacity: 1; }
+  .mobile-menu a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--navy); padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-menu .nav-cta {
+    display: inline-block; text-align: center;
+    margin-top: 8px; padding: 14px 24px;
+  }
+
+  /* — HERO — */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 120px 48px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(200,51,78,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 10% 80%, rgba(26,39,68,0.06) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
+  }
+
+  /* Floating particles */
+  .hero-particles {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  }
+  .particle {
+    position: absolute; border-radius: 50%;
+    background: var(--red); opacity: 0.12;
+    animation: float linear infinite;
+  }
+  @keyframes float {
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+    10% { opacity: 0.12; }
+    90% { opacity: 0.12; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 16px; border-radius: 20px;
+    background: rgba(200,51,78,0.08);
+    border: 1px solid rgba(200,51,78,0.2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--red);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--red);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .hero-title {
+    font-family: 'Literata', serif;
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 700; line-height: 1.08;
+    letter-spacing: -0.02em;
+    text-align: center;
+    max-width: 900px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero-title em {
+    font-style: italic; color: var(--red);
+    position: relative;
+  }
+  .hero-title em::after {
+    content: ''; position: absolute; bottom: 4px; left: 0; right: 0;
+    height: 3px; background: rgba(200,51,78,0.2); border-radius: 2px;
+  }
+  .hero-sub {
+    font-size: 18px; line-height: 1.6;
+    color: var(--muted); text-align: center;
+    max-width: 560px; margin-top: 24px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 14px; margin-top: 40px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 32px; background: var(--red);
+    color: #fff; border: none; border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.06em;
+    text-transform: uppercase; cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(200,51,78,0.3);
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .btn-primary:hover { background: var(--red2); transform: translateY(-1px); box-shadow: 0 6px 28px rgba(200,51,78,0.4); }
+  .btn-primary:hover::before { opacity: 1; }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px; background: transparent;
+    color: var(--navy); border: 1.5px solid var(--border);
+    border-radius: 8px; font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--navy); background: rgba(26,39,68,0.04); transform: translateY(-1px); }
+
+  /* Hero screen mockup */
+  .hero-screen {
+    margin-top: 60px; width: 100%; max-width: 1000px;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow:
+      0 24px 80px rgba(26,39,68,0.15),
+      0 8px 32px rgba(26,39,68,0.08),
+      0 0 0 1px rgba(26,39,68,0.05);
+    animation: fadeUp 0.8s 0.4s ease both;
+    background: #fff;
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  .hero-screen:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 32px 100px rgba(26,39,68,0.2), 0 12px 40px rgba(26,39,68,0.1);
+  }
+  .screen-bar {
+    display: flex; align-items: center; gap: 6px;
+    padding: 12px 16px; background: var(--navy);
+  }
+  .screen-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .screen-content {
+    display: flex; height: 380px;
+  }
+  .screen-sidebar {
+    width: 220px; background: var(--navy);
+    padding: 20px 16px; flex-shrink: 0;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .screen-logo {
+    font-family: 'Literata', serif; font-size: 14px;
+    color: #fff; font-weight: 700; margin-bottom: 20px;
+    padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .screen-logo small {
+    display: block; font-size: 8px;
+    color: rgba(255,255,255,0.4);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 400; margin-top: 2px;
+  }
+  .screen-nav-item {
+    padding: 8px 10px; border-radius: 6px;
+    font-family: 'Golos Text', sans-serif; font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    display: flex; align-items: center; gap: 8px;
+    transition: background 0.2s;
+  }
+  .screen-nav-item.active { background: rgba(200,51,78,0.2); color: #fff; }
+  .screen-main {
+    flex: 1; padding: 24px; overflow: hidden;
+    display: flex; flex-direction: column; gap: 12px;
+    background: var(--cream);
+  }
+  .screen-article-card {
+    background: #fff; border-radius: 8px; padding: 14px 16px;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .screen-article-card.active { border-color: rgba(200,51,78,0.3); background: #fff9f9; }
+  .card-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+  .card-meta { font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  .score-badge {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 2.5px solid #2E7D32; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: #2E7D32;
+    font-family: 'JetBrains Mono', monospace;
+    flex-shrink: 0;
+  }
+  .score-badge.orange { border-color: #F59E0B; color: #F59E0B; }
+  .status-chip {
+    padding: 3px 10px; border-radius: 20px; font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .status-chip.published { background: #E3F2FD; color: #0D47A1; }
+  .status-chip.checked { background: #E8F5E9; color: #2E7D32; }
+  .status-chip.draft { background: #F5F5F5; color: #666; }
+
+  /* — STATS — */
+  .stats {
+    background: var(--navy);
+    padding: 48px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; position: relative; overflow: hidden;
+  }
+  .stats::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 100% at 50% 50%, rgba(200,51,78,0.1) 0%, transparent 70%);
+  }
+  .stat-item {
+    padding: 32px; text-align: center; position: relative;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Literata', serif; font-size: 48px;
+    font-weight: 700; color: #fff; line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-num span { color: var(--red); }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: rgba(255,255,255,0.4);
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+
+  /* Counter animation */
+  .stat-num[data-target] {
+    transition: none;
+  }
+
+  /* — SECTION BASE — */
+  section { padding: 100px 48px; }
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--red);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Literata', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700; line-height: 1.15;
+    letter-spacing: -0.02em;
+    max-width: 600px;
+  }
+  .section-title em { font-style: italic; color: var(--red); }
+  .section-sub {
+    font-size: 16px; color: var(--muted);
+    line-height: 1.7; max-width: 500px;
+    margin-top: 16px;
+  }
+
+  /* — HOW IT WORKS — */
+  .how { background: #fff; }
+  .how-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .pipeline {
+    display: flex; flex-direction: column; gap: 0;
+    margin-top: 40px;
+  }
+  .pipeline-step {
+    display: flex; gap: 20px; position: relative;
+    padding-bottom: 32px;
+  }
+  .pipeline-step:last-child { padding-bottom: 0; }
+  .step-line {
+    display: flex; flex-direction: column; align-items: center;
+    flex-shrink: 0;
+  }
+  .step-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+    border: 1.5px solid var(--border);
+    background: var(--cream);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pipeline-step:hover .step-icon {
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px rgba(200,51,78,0.15);
+  }
+  .step-connector {
+    width: 1.5px; flex: 1; min-height: 20px;
+    background: linear-gradient(var(--red) 0%, var(--border) 100%);
+    margin-top: 6px;
+  }
+  .step-body { padding-top: 8px; }
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--red);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .step-name {
+    font-family: 'Golos Text', sans-serif;
+    font-size: 17px; font-weight: 700; color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  /* Right side — animated terminal */
+  .terminal {
+    background: var(--navy); border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(26,39,68,0.2);
+  }
+  .terminal-bar {
+    display: flex; align-items: center; gap: 6px;
+    padding: 12px 16px; background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .terminal-body { padding: 24px; min-height: 280px; }
+  .log-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; line-height: 1.8;
+    opacity: 0; animation: typeLine 0.4s ease forwards;
+  }
+  .log-line:nth-child(1) { animation-delay: 0.3s; color: rgba(255,255,255,0.5); }
+  .log-line:nth-child(2) { animation-delay: 0.8s; color: #81C784; }
+  .log-line:nth-child(3) { animation-delay: 1.3s; color: rgba(255,255,255,0.5); }
+  .log-line:nth-child(4) { animation-delay: 1.8s; color: #81C784; }
+  .log-line:nth-child(5) { animation-delay: 2.3s; color: rgba(255,255,255,0.5); }
+  .log-line:nth-child(6) { animation-delay: 2.8s; color: #FFD54F; }
+  .log-line:nth-child(7) { animation-delay: 3.3s; color: rgba(255,255,255,0.5); }
+  .log-line:nth-child(8) { animation-delay: 3.8s; color: #81C784; }
+  @keyframes typeLine {
+    from { opacity: 0; transform: translateX(-8px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Blinking cursor on last line */
+  .log-line:last-child::after {
+    content: ''; display: inline-block;
+    width: 7px; height: 14px; background: #81C784;
+    margin-left: 4px; vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* — FEATURES — */
+  .features { background: var(--cream); }
+  .features-inner { max-width: 1200px; margin: 0 auto; }
+  .features-header { margin-bottom: 60px; }
+  .features-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .feature-card {
+    background: #fff; padding: 36px 32px;
+    transition: background 0.2s, transform 0.2s;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .feature-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--red); transform: scaleX(0);
+    transition: transform 0.3s ease; transform-origin: left;
+  }
+  .feature-card:hover { background: #fafaf8; }
+  .feature-card:hover::before { transform: scaleX(1); }
+  .feature-icon {
+    font-size: 28px; margin-bottom: 16px;
+    display: block;
+  }
+  .feature-title {
+    font-family: 'Golos Text', sans-serif;
+    font-size: 17px; font-weight: 700;
+    color: var(--navy); margin-bottom: 10px;
+  }
+  .feature-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+  /* — SOURCES — */
+  .sources { background: var(--navy); padding: 80px 48px; }
+  .sources-inner { max-width: 1200px; margin: 0 auto; }
+  .sources-tag { color: rgba(255,255,255,0.4) !important; }
+  .sources-title { color: #fff !important; }
+  .sources-sub { color: rgba(255,255,255,0.5) !important; }
+  .sources-grid {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    margin-top: 48px;
+  }
+  .source-chip {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 18px; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: rgba(255,255,255,0.7);
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  }
+  .source-chip:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+  }
+  .source-chip .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--red); flex-shrink: 0;
+  }
+  .source-chip .dot.green { background: #81C784; }
+  .source-chip .dot.blue { background: #64B5F6; }
+
+  /* — WORKFLOW — */
+  .workflow { background: #fff; }
+  .workflow-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .workflow-steps {
+    display: flex; flex-direction: column; gap: 16px;
+    margin-top: 40px;
+  }
+  .wstep {
+    display: flex; gap: 16px; padding: 20px;
+    border-radius: 10px; border: 1px solid var(--border);
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    cursor: default;
+  }
+  .wstep:hover { border-color: rgba(200,51,78,0.3); background: #fff9f9; transform: translateX(4px); }
+  .wstep-num {
+    font-family: 'Literata', serif; font-size: 32px;
+    font-weight: 700; color: rgba(200,51,78,0.15);
+    line-height: 1; flex-shrink: 0; width: 40px;
+    transition: color 0.2s;
+  }
+  .wstep:hover .wstep-num { color: rgba(200,51,78,0.3); }
+  .wstep-title {
+    font-size: 15px; font-weight: 700; color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .wstep-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .editor-mockup {
+    background: var(--cream); border-radius: 12px;
+    border: 1px solid var(--border); overflow: hidden;
+    box-shadow: 0 12px 40px rgba(26,39,68,0.1);
+  }
+  .editor-bar {
+    background: var(--navy); padding: 10px 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .editor-tabs {
+    display: flex; gap: 2px; flex: 1;
+  }
+  .editor-tab {
+    padding: 4px 12px; border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: rgba(255,255,255,0.4);
+    transition: background 0.2s, color 0.2s;
+  }
+  .editor-tab.active { background: rgba(255,255,255,0.1); color: #fff; }
+  .editor-body { padding: 24px; }
+  .editor-score-row {
+    display: flex; gap: 12px; margin-bottom: 20px;
+  }
+  .escore {
+    flex: 1; padding: 12px; background: #fff;
+    border-radius: 8px; border: 1px solid var(--border);
+    text-align: center;
+    transition: transform 0.15s;
+  }
+  .escore:hover { transform: scale(1.03); }
+  .escore-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px; font-weight: 700;
+    line-height: 1; margin-bottom: 4px;
+  }
+  .escore-num.green { color: #2E7D32; }
+  .escore-num.orange { color: #F59E0B; }
+  .escore-label {
+    font-size: 9px; color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+  }
+  .editor-issue {
+    padding: 10px 12px; border-radius: 6px; margin-bottom: 8px;
+    font-size: 12px; color: #555;
+    display: flex; align-items: flex-start; gap: 8px;
+    transition: transform 0.15s;
+  }
+  .editor-issue:hover { transform: translateX(2px); }
+  .editor-issue.warn { background: #FFF8E7; border-left: 3px solid #F59E0B; }
+  .editor-issue.ok { background: #E8F5E9; border-left: 3px solid #2E7D32; }
+  .editor-issue.info { background: #EEF2FF; border-left: 3px solid #6366F1; }
+
+  /* — CTA — */
+  .cta-section {
+    background: var(--red);
+    padding: 100px 48px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
+  }
+  .cta-section::after {
+    content: 'МедРедакция';
+    position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+    font-family: 'Literata', serif; font-size: 160px;
+    font-weight: 700; color: rgba(255,255,255,0.04);
+    white-space: nowrap; pointer-events: none;
+    letter-spacing: -0.04em;
+  }
+  .cta-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: rgba(255,255,255,0.6);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 20px;
+  }
+  .cta-title {
+    font-family: 'Literata', serif;
+    font-size: clamp(32px, 5vw, 60px);
+    font-weight: 700; color: #fff;
+    line-height: 1.1; letter-spacing: -0.02em;
+    margin-bottom: 20px; position: relative;
+  }
+  .cta-sub {
+    font-size: 17px; color: rgba(255,255,255,0.7);
+    max-width: 480px; margin: 0 auto 40px;
+    line-height: 1.65; position: relative;
+  }
+  .btn-white {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 36px; background: #fff;
+    color: var(--red); border: none; border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    position: relative; font-weight: 700;
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+  /* — FOOTER — */
+  footer {
+    background: var(--navy); padding: 48px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Literata', serif; font-size: 18px;
+    font-weight: 700; color: #fff;
+  }
+  .footer-logo span { color: var(--red); }
+  .footer-logo small {
+    display: block; font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; color: rgba(255,255,255,0.3);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-top: 3px;
+  }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: rgba(255,255,255,0.3);
+    text-decoration: none; text-transform: uppercase;
+    letter-spacing: 0.08em; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.6); }
+  .footer-copy {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: rgba(255,255,255,0.2);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+
+  /* — ANIMATIONS — */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Staggered reveal for grids */
+  .reveal-stagger .reveal:nth-child(1) { transition-delay: 0s; }
+  .reveal-stagger .reveal:nth-child(2) { transition-delay: 0.08s; }
+  .reveal-stagger .reveal:nth-child(3) { transition-delay: 0.16s; }
+  .reveal-stagger .reveal:nth-child(4) { transition-delay: 0.24s; }
+  .reveal-stagger .reveal:nth-child(5) { transition-delay: 0.32s; }
+  .reveal-stagger .reveal:nth-child(6) { transition-delay: 0.4s; }
+
+  /* — RESPONSIVE — */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .nav-burger { display: block; }
+    .mobile-menu { display: flex; }
+    section { padding: 60px 24px; }
+    .hero { padding: 100px 24px 60px; min-height: auto; }
+    .hero-title { font-size: clamp(32px, 8vw, 48px); }
+    .hero-sub { font-size: 15px; }
+    .hero-actions { flex-direction: column; align-items: center; width: 100%; }
+    .hero-actions .btn-primary,
+    .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+    .hero-screen { margin-top: 40px; }
+    .screen-sidebar { display: none; }
+    .how-inner, .workflow-inner { grid-template-columns: 1fr; gap: 40px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); padding: 32px 24px; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .stat-num { font-size: 36px; }
+    footer { flex-direction: column; gap: 24px; text-align: center; padding: 36px 24px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .sources { padding: 60px 24px; }
+    .cta-section { padding: 60px 24px; }
+    .cta-section::after { font-size: 60px; }
+    nav.scrolled { padding: 12px 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .stats { grid-template-columns: 1fr; }
+    .editor-score-row { flex-wrap: wrap; }
+    .escore { min-width: calc(50% - 6px); }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+    .particle { display: none; }
+  }
+
+  /* — HERO TRUST LINE — */
+  .hero-trust {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(26,39,68,0.55);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .hero-trust-sep { color: var(--red); }
+  @media (max-width: 640px) {
+    .hero-trust { font-size: 9px; gap: 8px; }
+  }
+
+  /* — MID CTA BANNER — */
+  .mid-cta {
+    max-width: 1180px; margin: 60px auto 0;
+    padding: 36px 40px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--red);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px;
+  }
+  .mid-cta-text {
+    font-family: 'Literata', serif;
+    font-size: 22px; font-weight: 600;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+  .mid-cta-text em { font-style: italic; color: var(--red); }
+  .mid-cta-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+  .mid-cta-btn {
+    flex-shrink: 0;
+    padding: 14px 26px;
+    background: var(--red);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .mid-cta-btn:hover { background: var(--red2); transform: translateY(-1px); }
+  @media (max-width: 720px) {
+    .mid-cta { padding: 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .mid-cta-text { font-size: 18px; }
+    .mid-cta-btn { width: 100%; text-align: center; }
+  }
+
+  /* — STICKY MOBILE CTA — */
+  .sticky-cta {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    z-index: 90;
+    background: rgba(245,240,232,0.96);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    padding: 10px 16px;
+    gap: 8px;
+  }
+  .sticky-cta a {
+    flex: 1;
+    padding: 12px 14px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  .sticky-cta .scta-primary { background: var(--red); color: #fff; }
+  .sticky-cta .scta-secondary { background: transparent; color: var(--navy); border: 1px solid var(--border); }
+  @media (max-width: 720px) { .sticky-cta { display: flex; } }
+
+  /* — FAQ — */
+  .faq {
+    max-width: 880px; margin: 0 auto;
+    padding: 120px 24px 40px;
+  }
+  .faq-head { text-align: center; margin-bottom: 48px; }
+  .faq-list { display: flex; flex-direction: column; gap: 2px; }
+  .faq-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    transition: border-color 0.15s;
+  }
+  .faq-item:hover { border-color: rgba(200,51,78,0.35); }
+  .faq-q {
+    width: 100%;
+    text-align: left;
+    background: none; border: 0;
+    padding: 22px 26px;
+    font-family: 'Literata', serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--navy);
+    line-height: 1.35;
+    cursor: pointer;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  }
+  .faq-q::after {
+    content: '+';
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px; font-weight: 400;
+    color: var(--red);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    line-height: 1;
+  }
+  .faq-item[open] .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    padding: 0 26px 22px;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 15px; line-height: 1.65;
+    color: #3D5080;
+  }
+  .faq-a a { color: var(--red); }
+  @media (max-width: 720px) {
+    .faq { padding: 80px 20px 24px; }
+    .faq-q { font-size: 16px; padding: 18px 20px; }
+    .faq-a { padding: 0 20px 18px; font-size: 14px; }
+  }
+
+  /* — EXPANDED FOOTER — */
+  .footer-wrap {
+    background: var(--navy); color: #fff;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 56px 48px 24px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-col-head {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--red); margin-bottom: 16px;
+  }
+  .footer-brand-name { font-family: 'Literata', serif; font-size: 22px; font-weight: 700; }
+  .footer-brand-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.5); margin-top: 4px;
+  }
+  .footer-req {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+    margin-top: 20px;
+  }
+  .footer-req b { color: rgba(255,255,255,0.8); font-weight: 600; }
+  .footer-col a, .footer-col span {
+    display: block;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 13px; color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.15s;
+  }
+  .footer-col a:hover { color: var(--red); }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    padding: 20px 48px 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  @media (max-width: 860px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; padding: 40px 28px 20px; gap: 28px; }
+    .footer-bottom { padding: 20px 28px 32px; flex-direction: column; }
+  }
+  @media (max-width: 520px) {
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+  <svg class="preloader-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <defs><linearGradient id="plbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1A2744"/><stop offset="100%" stop-color="#2D3F66"/></linearGradient></defs>
+    <rect width="64" height="64" rx="14" fill="url(#plbg)"/>
+    <rect x="24" y="12" width="16" height="40" rx="3" fill="#C8334E"/>
+    <rect x="12" y="24" width="40" height="16" rx="3" fill="#C8334E"/>
+    <path d="M38 38 L52 52 L48 56 L34 42 Z" fill="#F5E6D0" opacity="0.9"/>
+    <path d="M52 52 L48 56 L50 58 L54 54 Z" fill="#B45309"/>
+  </svg>
+  <div class="preloader-name">МедРедакция</div>
+  <div class="preloader-bar"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Мед<span>Редакция</span></div>
+  <div class="nav-links">
+    <a href="#how">Как работает</a>
+    <a href="#features">Возможности</a>
+    <a href="#sources">Источники</a>
+    <a href="https://www.medredactor.online" class="nav-cta">Открыть редактор &rarr;</a>
+  </div>
+  <button class="nav-burger" aria-label="Меню" onclick="this.classList.toggle('open');document.querySelector('.mobile-menu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu">
+  <a href="#how" onclick="document.querySelector('.nav-burger').classList.remove('open');this.parentElement.classList.remove('open')">Как работает</a>
+  <a href="#features" onclick="document.querySelector('.nav-burger').classList.remove('open');this.parentElement.classList.remove('open')">Возможности</a>
+  <a href="#sources" onclick="document.querySelector('.nav-burger').classList.remove('open');this.parentElement.classList.remove('open')">Источники</a>
+  <a href="https://www.medredactor.online" class="nav-cta">Открыть редактор &rarr;</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-badge">ИИ-редакция &middot; Медицинский копирайтинг</div>
+  <h1 class="hero-title">
+    Медицинские статьи<br>с <em>точными данными</em><br>и источниками
+  </h1>
+  <p class="hero-sub">
+    Три агента &mdash; Исследователь, Автор и Редактор &mdash; работают вместе чтобы создавать клинически точные тексты для пациентов и специалистов.
+  </p>
+  <div class="hero-actions">
+    <a href="https://www.medredactor.online/register" class="btn-primary">
+      &#10022; Начать бесплатно
+    </a>
+    <a href="https://www.medredactor.online/pricing" class="btn-secondary">Тарифы · от 0 ₽</a>
+  </div>
+  <div class="hero-trust">
+    <span>1 статья бесплатно</span>
+    <span class="hero-trust-sep">·</span>
+    <span>Оплата ЮKassa</span>
+    <span class="hero-trust-sep">·</span>
+    <span>Источники: PubMed, ESMO, Минздрав РФ</span>
+  </div>
+
+  <!-- Screen mockup -->
+  <div class="hero-screen">
+    <div class="screen-bar">
+      <div class="screen-dot" style="background:#FF5F57"></div>
+      <div class="screen-dot" style="background:#FFBD2E"></div>
+      <div class="screen-dot" style="background:#28CA41"></div>
+      <div style="flex:1; display:flex; justify-content:center;">
+        <div style="background:rgba(255,255,255,0.08); border-radius:4px; padding:3px 20px; font-family:'JetBrains Mono',monospace; font-size:11px; color:rgba(255,255,255,0.4);">
+          medredakciya.ru
+        </div>
+      </div>
+    </div>
+    <div class="screen-content">
+      <div class="screen-sidebar">
+        <div class="screen-logo">МедРедакция<small>медицинский копирайтер</small></div>
+        <div class="screen-nav-item active">&#9889; Все статьи</div>
+        <div class="screen-nav-item">+ Новая статья</div>
+        <div style="margin-top: auto; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:8px; color:rgba(255,255,255,0.25); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Базы данных</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:rgba(255,255,255,0.3); line-height:1.8;">
+            &#9679; PubMed<br>&#9679; ESMO/NCCN<br>&#9679; CyberLeninka<br>&#9679; Минздрав РФ
+          </div>
+        </div>
+      </div>
+      <div class="screen-main">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#9CA3AF; margin-bottom:4px;">ВСЕ СТАТЬИ &middot; 12 всего &middot; 3 опубликовано</div>
+        <div class="screen-article-card">
+          <div>
+            <div class="card-title">Рак предстательной железы: диагностика и лечение</div>
+            <div class="card-meta">Онкология &middot; ~680 слов &middot; 9 источн. &middot; 5 мар.</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div class="score-badge">92</div>
+            <div class="status-chip published">Опубликовано</div>
+          </div>
+        </div>
+        <div class="screen-article-card active">
+          <div>
+            <div class="card-title">Рак поджелудочной железы: современные методы</div>
+            <div class="card-meta">Онкология &middot; ~540 слов &middot; 13 источн. &middot; сегодня</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div class="score-badge orange">78</div>
+            <div class="status-chip checked">Проверено</div>
+          </div>
+        </div>
+        <div class="screen-article-card">
+          <div>
+            <div class="card-title">Рак лёгкого 4 стадии: прогноз и лечение</div>
+            <div class="card-meta">Онкология &middot; ~720 слов &middot; 11 источн. &middot; 4 мар.</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div class="score-badge">88</div>
+            <div class="status-chip published">Опубликовано</div>
+          </div>
+        </div>
+        <div class="screen-article-card">
+          <div>
+            <div class="card-title">Рак шейки матки: методы диагностики</div>
+            <div class="card-meta">Онкология &middot; ~490 слов &middot; 7 источн. &middot; 3 мар.</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div class="score-badge">85</div>
+            <div class="status-chip checked">Проверено</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="3">0<span>&times;</span></div>
+    <div class="stat-label">ИИ-агента в пайплайне</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="10">0<span>+</span></div>
+    <div class="stat-label">медицинских баз данных</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="90">0<span>+</span></div>
+    <div class="stat-label">средний балл качества</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="5">0<span>&times;</span></div>
+    <div class="stat-label">быстрее ручного написания</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div>
+      <div class="section-tag reveal">// Пайплайн генерации</div>
+      <h2 class="section-title reveal">Три агента работают вместе</h2>
+      <p class="section-sub reveal">Каждый агент специализируется на своей задаче &mdash; как в реальной редакции</p>
+      <div class="pipeline">
+        <div class="pipeline-step reveal">
+          <div class="step-line">
+            <div class="step-icon">&#128300;</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-num">01 &middot; Исследователь</div>
+            <div class="step-name">Собирает данные и источники</div>
+            <div class="step-desc">Анализирует PubMed, ESMO, CyberLeninka, Минздрав РФ. Формирует фактическую базу с реальными ссылками.</div>
+          </div>
+        </div>
+        <div class="pipeline-step reveal">
+          <div class="step-line">
+            <div class="step-icon">&#9997;&#65039;</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-num">02 &middot; Автор</div>
+            <div class="step-name">Пишет статью по данным</div>
+            <div class="step-desc">Создаёт структурированный текст с учётом аудитории, формата и ключевых слов. Встраивает цитаты и ссылки.</div>
+          </div>
+        </div>
+        <div class="pipeline-step reveal">
+          <div class="step-line">
+            <div class="step-icon">&#129658;</div>
+          </div>
+          <div class="step-body">
+            <div class="step-num">03 &middot; Редактор</div>
+            <div class="step-name">Проверяет точность и стиль</div>
+            <div class="step-desc">Оценивает медицинскую точность, качество источников, стиль и структуру. Выставляет балл от 0 до 100.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="terminal reveal">
+      <div class="terminal-bar">
+        <div class="screen-dot" style="background:#FF5F57"></div>
+        <div class="screen-dot" style="background:#FFBD2E"></div>
+        <div class="screen-dot" style="background:#28CA41"></div>
+        <div style="margin-left:8px; font-family:'JetBrains Mono',monospace; font-size:11px; color:rgba(255,255,255,0.3);">agent-pipeline.log</div>
+      </div>
+      <div class="terminal-body">
+        <div class="log-line">&#128300; Исследователь запущен...</div>
+        <div class="log-line">&nbsp;&nbsp;&#10003; Загружено источников: 4</div>
+        <div class="log-line">&nbsp;&nbsp;&#8226; Анализирую PubMed: найдено 12 статей</div>
+        <div class="log-line">&nbsp;&nbsp;&#10003; Собрана фактическая база (38 фактов)</div>
+        <div class="log-line">&#9997;&#65039; Автор запущен...</div>
+        <div class="log-line">&nbsp;&nbsp;&#9888; Написано 680 слов &middot; 5 разделов</div>
+        <div class="log-line">&#129658; Редактор проверяет...</div>
+        <div class="log-line">&nbsp;&nbsp;&#10003; Балл: 91/100 &middot; Готово к публикации</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="features-inner">
+    <div class="features-header">
+      <div class="section-tag reveal">// Возможности</div>
+      <h2 class="section-title reveal">Всё для медицинского<br><em>контент-производства</em></h2>
+    </div>
+    <div class="features-grid reveal-stagger">
+      <div class="feature-card reveal">
+        <span class="feature-icon">&#128269;</span>
+        <div class="feature-title">Структурный анализ</div>
+        <div class="feature-desc">Исследователь анализирует конкурентов и рекомендует оптимальную структуру для вашей темы и аудитории.</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">&#128279;</span>
+        <div class="feature-title">Кликабельные источники</div>
+        <div class="feature-desc">Каждое утверждение подкреплено ссылкой. Экспорт в Word сохраняет все гиперссылки на PubMed, ESMO и другие базы.</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">&#128172;</span>
+        <div class="feature-title">Чат с редактором</div>
+        <div class="feature-desc">Попросите ИИ добавить раздел, переписать введение или адаптировать текст &mdash; он выполнит точечно без изменения остального.</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">&#127919;</span>
+        <div class="feature-title">Балл качества</div>
+        <div class="feature-desc">Редактор оценивает точность, источники и стиль по 100-балльной шкале. Нажмите &laquo;Внести правки&raquo; &mdash; он исправит сам.</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">&#128229;</span>
+        <div class="feature-title">Загрузка статей</div>
+        <div class="feature-desc">Загрузите готовый текст для проверки, редактирования или улучшения. МедРедактор структурирует его автоматически.</div>
+      </div>
+      <div class="feature-card reveal">
+        <span class="feature-icon">&#128196;</span>
+        <div class="feature-title">Экспорт в Word</div>
+        <div class="feature-desc">Публикация статьи создаёт .docx файл с заголовками, лидом, разделами и пронумерованными источниками со ссылками.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="sources" id="sources">
+  <div class="sources-inner">
+    <div class="section-tag sources-tag reveal">// Базы данных</div>
+    <h2 class="section-title sources-title reveal">Данные из авторитетных<br><em style="color:var(--red)">медицинских источников</em></h2>
+    <p class="section-sub sources-sub reveal">Исследователь обращается к ведущим мировым и российским базам данных для каждой статьи</p>
+    <div class="sources-grid reveal-stagger">
+      <div class="source-chip reveal"><div class="dot green"></div>PubMed / NCBI</div>
+      <div class="source-chip reveal"><div class="dot green"></div>Europe PMC</div>
+      <div class="source-chip reveal"><div class="dot green"></div>Cochrane Library</div>
+      <div class="source-chip reveal"><div class="dot blue"></div>ESMO Guidelines</div>
+      <div class="source-chip reveal"><div class="dot blue"></div>NCCN Guidelines</div>
+      <div class="source-chip reveal"><div class="dot blue"></div>ASCO Guidelines</div>
+      <div class="source-chip reveal"><div class="dot"></div>CyberLeninka</div>
+      <div class="source-chip reveal"><div class="dot"></div>eLibrary.ru</div>
+      <div class="source-chip reveal"><div class="dot"></div>Минздрав РФ</div>
+      <div class="source-chip reveal"><div class="dot"></div>RUSSCO</div>
+      <div class="source-chip reveal"><div class="dot green"></div>ClinicalTrials.gov</div>
+      <div class="source-chip reveal"><div class="dot blue"></div>WHO Publications</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="workflow">
+  <div class="workflow-inner">
+    <div class="editor-mockup reveal">
+      <div class="editor-bar">
+        <div style="font-size:10px; color:rgba(255,255,255,0.4); font-family:'JetBrains Mono',monospace;">&larr; Назад</div>
+        <div class="editor-tabs">
+          <div class="editor-tab">&#9881; Агенты</div>
+          <div class="editor-tab active">&#129658; Редактор</div>
+          <div class="editor-tab">&#128172; Чат</div>
+        </div>
+      </div>
+      <div class="editor-body">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#9CA3AF; margin-bottom:12px;">ОТЧЁТ РЕДАКТОРА</div>
+        <div style="text-align:center; margin-bottom:16px;">
+          <span style="font-family:'Literata',serif; font-size:40px; font-weight:700; color:#2E7D32;">91</span>
+          <span style="font-size:13px; color:#9CA3AF;"> / 100 ср. балл</span>
+        </div>
+        <div class="editor-score-row">
+          <div class="escore">
+            <div class="escore-num green">88</div>
+            <div class="escore-label">Общая</div>
+          </div>
+          <div class="escore">
+            <div class="escore-num green">95</div>
+            <div class="escore-label">Точность</div>
+          </div>
+          <div class="escore">
+            <div class="escore-num green">90</div>
+            <div class="escore-label">Источники</div>
+          </div>
+          <div class="escore">
+            <div class="escore-num green">92</div>
+            <div class="escore-label">Стиль</div>
+          </div>
+        </div>
+        <div class="editor-issue ok">&#10003; Готово к публикации &mdash; высокое качество и точность</div>
+        <div class="editor-issue info">&#9432; Добавить FAQ для Answer Box оптимизации</div>
+        <div class="editor-issue warn">&#9888; Расширить раздел о клинических исследованиях</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-tag reveal">// Контроль качества</div>
+      <h2 class="section-title reveal">Редактор проверяет<br><em>каждое утверждение</em></h2>
+      <p class="section-sub reveal">Встроенная система оценки качества не допустит публикацию статьи с ошибками</p>
+      <div class="workflow-steps">
+        <div class="wstep reveal">
+          <div class="wstep-num">01</div>
+          <div>
+            <div class="wstep-title">Перекрёстная проверка источников</div>
+            <div class="wstep-desc">Каждая цитата [N] в тексте сверяется со списком источников &mdash; редактор найдёт несоответствия.</div>
+          </div>
+        </div>
+        <div class="wstep reveal">
+          <div class="wstep-num">02</div>
+          <div>
+            <div class="wstep-title">Оценка медицинской точности</div>
+            <div class="wstep-desc">Проверка статистических данных, клинических рекомендаций и соответствия актуальным гайдлайнам.</div>
+          </div>
+        </div>
+        <div class="wstep reveal">
+          <div class="wstep-num">03</div>
+          <div>
+            <div class="wstep-title">Точечное применение правок</div>
+            <div class="wstep-desc">Нажмите &laquo;Применить&raquo; рядом с любым замечанием &mdash; редактор внесёт именно это изменение без потери остального.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA (после «Контроль качества») -->
+<div class="mid-cta reveal">
+  <div>
+    <div class="mid-cta-text">Попробуйте <em>бесплатно</em> — 1 статья в месяц</div>
+    <div class="mid-cta-sub">Регистрация за 30 секунд · оплата картой не требуется</div>
+  </div>
+  <a href="https://www.medredactor.online/register" class="mid-cta-btn">Создать аккаунт →</a>
+</div>
+
+<!-- FAQ — контент для Answer Box / LLM (Yandex Neuro, ChatGPT, Perplexity, Gemini) -->
+<section class="faq" id="faq">
+  <div class="faq-head">
+    <div class="section-tag reveal">// Частые вопросы</div>
+    <h2 class="section-title reveal">Что нужно знать<br><em>о сервисе</em></h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item reveal">
+      <summary class="faq-q">Что такое МедРедакция?</summary>
+      <div class="faq-a">МедРедакция — это российский онлайн-сервис для создания медицинских статей с помощью искусственного интеллекта. Три AI-агента — Исследователь, Автор и Корректор — собирают данные из авторитетных медицинских источников (PubMed, ESMO, Минздрав РФ), пишут статью и проверяют её фактологическую точность. Оплата в рублях через ЮKassa.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary class="faq-q">Из каких источников берутся данные для статей?</summary>
+      <div class="faq-a">PubMed, Cochrane Library, ESMO, NCCN, ASCO, UpToDate, Минздрав РФ, РосОнкоВеб, CyberLeninka, eLibrary, WHO, CDC. Каждое утверждение в готовой статье сопровождается ссылкой на источник в квадратных скобках — например, <b>[3]</b> — с переходом на полное описание в списке литературы.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary class="faq-q">Для кого подходит сервис?</summary>
+      <div class="faq-a">Для медицинских копирайтеров на фрилансе, штатных редакторов клиник и фармацевтических компаний, контент-агентств, которые пишут тексты для медицинских сайтов и блогов. Сервис полезен там, где важны точные данные с источниками, а не просто красивый текст.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary class="faq-q">Сколько стоит использование?</summary>
+      <div class="faq-a">
+        Четыре тарифа:
+        <ul style="margin:10px 0 0 18px;padding:0">
+          <li><b>Free</b> — 0 ₽, 1 статья в месяц (попробовать)</li>
+          <li><b>Solo</b> — 1 490 ₽/мес, 20 статей (фриланс-копирайтеры)</li>
+          <li><b>Business</b> — 4 990 ₽/мес, 100 статей (штатные редакторы)</li>
+          <li><b>Agency</b> — 12 990 ₽/мес, 300 статей (контент-агентства)</li>
+        </ul>
+        Оплата картой или СБП через ЮKassa. Отменить подписку можно в любой момент.
+      </div>
+    </details>
+    <details class="faq-item reveal">
+      <summary class="faq-q">Можно ли проверить статью перед публикацией?</summary>
+      <div class="faq-a">Да. Встроенный Корректор оценивает медицинскую точность, перекрёстно сверяет каждую цитату [N] со списком источников и проверяет соответствие клиническим гайдлайнам. Статья не помечается как готовая, пока редактор не подтвердит качество.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary class="faq-q">В каком формате можно выгрузить готовую статью?</summary>
+      <div class="faq-a">DOCX (Microsoft Word) с сохранением заголовков, списков, ссылок на источники — удобно вставлять в CMS сайта или отправлять на редактуру. HTML-экспорт готовится для тарифа Business.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary class="faq-q">Безопасно ли использовать сервис для медицинской редактуры?</summary>
+      <div class="faq-a">Сервис выдаёт черновик для дальнейшей редакторской проверки. Окончательную ответственность за медицинскую точность и соответствие ФЗ «О рекламе» и 38-ФЗ «О рекламе лекарств» несёт публикующий редактор. Все сгенерированные тексты должны быть проверены специалистом перед публикацией.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary class="faq-q">Как начать работать с сервисом?</summary>
+      <div class="faq-a">Перейдите на <a href="https://www.medredactor.online/register">medredactor.online/register</a>, зарегистрируйтесь по email — бесплатный тариф Free (1 статья в месяц) активируется автоматически. Можно сразу создать и запустить генерацию первой статьи.</div>
+    </details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-tag reveal">Начните прямо сейчас</div>
+  <h2 class="cta-title reveal">Первая статья<br>за 30 секунд</h2>
+  <p class="cta-sub reveal">Введите тему &mdash; три агента сделают всё остальное. Исследование, написание, проверка качества.</p>
+  <div class="reveal" style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; align-items:center; margin-top:8px;">
+    <a href="https://www.medredactor.online/register" class="btn-white">
+      &#10022; Начать бесплатно
+    </a>
+    <a href="https://www.medredactor.online/pricing" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;padding:14px 20px;border:1px solid rgba(255,255,255,0.2);border-radius:2px;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'">Смотреть тарифы →</a>
+  </div>
+  <div style="margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.45);">Без карты · Оплата ЮKassa · Отмена в один клик</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-wrap">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-brand-name">Мед<span style="color:var(--red)">Редакция</span></div>
+      <div class="footer-brand-sub">Медицинский копирайтер на ИИ</div>
+      <div class="footer-req">
+        <b>ООО «Первый ИТ Альянс»</b><br>
+        ИНН 7725532894 · КПП 772501001<br>
+        ОГРН 1057746309323<br>
+        115280, г. Москва,<br>
+        ул. Ленинская Слобода, д. 9, оф. 6
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-head">Продукт</div>
+      <a href="#how">Как работает</a>
+      <a href="#features">Возможности</a>
+      <a href="#sources">Источники</a>
+      <a href="#faq">Частые вопросы</a>
+      <a href="https://www.medredactor.online/pricing">Тарифы</a>
+      <a href="https://www.medredactor.online">Открыть редактор →</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-head">Правовая информация</div>
+      <a href="/legal/offer">Публичная оферта</a>
+      <a href="/legal/delivery">Условия оказания услуг</a>
+      <a href="/legal/privacy">Политика по ПДн</a>
+      <a href="/legal/contacts">Контакты и реквизиты</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-head">Контакты</div>
+      <a href="mailto:info@1it.ru">info@1it.ru</a>
+      <a href="tel:+74956486837">+7 (495) 648-68-37</a>
+      <span style="margin-top:10px">Москва, Шлюзовая наб., д. 8с1, оф. 334</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ООО «Первый ИТ Альянс»</span>
+    <span>Оплата через ЮKassa</span>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="https://www.medredactor.online/pricing" class="scta-secondary">Тарифы</a>
+  <a href="https://www.medredactor.online/register" class="scta-primary">Начать бесплатно →</a>
+</div>
+
+<script>
+  // Preloader
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('preloader').classList.add('done'), 1800)
+  })
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav')
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40)
+  }, { passive: true })
+
+  // Scroll reveal with stagger
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+        revealObserver.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' })
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el))
+
+  // Counter animation for stats
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target
+        const target = parseInt(el.dataset.target)
+        const suffix = el.querySelector('span')?.outerHTML || ''
+        let current = 0
+        const step = Math.max(1, Math.floor(target / 30))
+        const timer = setInterval(() => {
+          current += step
+          if (current >= target) {
+            current = target
+            clearInterval(timer)
+          }
+          el.innerHTML = current + suffix
+        }, 30)
+        counterObserver.unobserve(el)
+      }
+    })
+  }, { threshold: 0.5 })
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el))
+
+  // Terminal animation restart on scroll
+  const terminal = document.querySelector('.terminal')
+  const termObs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      const lines = terminal.querySelectorAll('.log-line')
+      lines.forEach(l => {
+        l.style.animation = 'none'
+        l.offsetHeight
+        l.style.animation = ''
+      })
+      termObs.unobserve(terminal)
+    }
+  }, { threshold: 0.3 })
+  if (terminal) termObs.observe(terminal)
+
+  // Hero particles
+  const particlesEl = document.getElementById('particles')
+  if (particlesEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    for (let i = 0; i < 12; i++) {
+      const p = document.createElement('div')
+      p.className = 'particle'
+      const size = 3 + Math.random() * 5
+      p.style.cssText = `
+        width:${size}px; height:${size}px;
+        left:${Math.random()*100}%;
+        animation-duration:${8+Math.random()*12}s;
+        animation-delay:${Math.random()*8}s;
+      `
+      particlesEl.appendChild(p)
+    }
+  }
+</script>
+</body>
+</html>
