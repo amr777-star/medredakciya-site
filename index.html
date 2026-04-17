@@ -81,7 +81,7 @@
 </script>
 
 <!-- Schema.org JSON-LD · SoftwareApplication (продукт) -->
-<script type="application/ld+json">
+<script type="application/ld+json" id="ld-software">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -97,10 +97,10 @@
     "name": "ООО «Первый ИТ Альянс»"
   },
   "offers": [
-    { "@type": "Offer", "name": "Free",     "price": "0",     "priceCurrency": "RUB", "description": "1 статья в месяц",   "url": "https://www.medredactor.online/pricing" },
-    { "@type": "Offer", "name": "Solo",     "price": "1490",  "priceCurrency": "RUB", "description": "20 статей в месяц",  "url": "https://www.medredactor.online/pricing" },
-    { "@type": "Offer", "name": "Business", "price": "4990",  "priceCurrency": "RUB", "description": "100 статей в месяц", "url": "https://www.medredactor.online/pricing" },
-    { "@type": "Offer", "name": "Agency",   "price": "12990", "priceCurrency": "RUB", "description": "300 статей в месяц", "url": "https://www.medredactor.online/pricing" }
+    { "@type": "Offer", "name": "Free",     "price": "0",     "priceCurrency": "RUB", "description": "1 статья в месяц",   "url": "https://www.medredactor.online/pricing", "sku": "free"     },
+    { "@type": "Offer", "name": "Solo",     "price": "1490",  "priceCurrency": "RUB", "description": "20 статей в месяц",  "url": "https://www.medredactor.online/pricing", "sku": "solo"     },
+    { "@type": "Offer", "name": "Business", "price": "4990",  "priceCurrency": "RUB", "description": "100 статей в месяц", "url": "https://www.medredactor.online/pricing", "sku": "business" },
+    { "@type": "Offer", "name": "Agency",   "price": "12990", "priceCurrency": "RUB", "description": "300 статей в месяц", "url": "https://www.medredactor.online/pricing", "sku": "agency"   }
   ],
   "featureList": [
     "Три агента: Исследователь, Автор, Корректор",
@@ -113,7 +113,7 @@
 }
 </script>
 
-<!-- Schema.org JSON-LD · FAQPage (GEO / Answer Box) -->
+<!-- Schema.org JSON-LD · FAQPage (GEO / Answer Box) · Prices below are the default; platform /api/public/plans overrides at runtime -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1530,11 +1530,11 @@
       <summary class="faq-q">Сколько стоит использование?</summary>
       <div class="faq-a">
         Четыре тарифа:
-        <ul style="margin:10px 0 0 18px;padding:0">
-          <li><b>Free</b> — 0 ₽, 1 статья в месяц (попробовать)</li>
-          <li><b>Solo</b> — 1 490 ₽/мес, 20 статей (фриланс-копирайтеры)</li>
-          <li><b>Business</b> — 4 990 ₽/мес, 100 статей (штатные редакторы)</li>
-          <li><b>Agency</b> — 12 990 ₽/мес, 300 статей (контент-агентства)</li>
+        <ul style="margin:10px 0 0 18px;padding:0" id="pricing-list">
+          <li data-plan="free"><b>Free</b> — <span data-price>0</span> ₽, <span data-quota>1 статья в месяц</span> (попробовать)</li>
+          <li data-plan="solo"><b>Solo</b> — <span data-price>1 490</span> ₽/мес, <span data-quota>20 статей</span> (фриланс-копирайтеры)</li>
+          <li data-plan="business"><b>Business</b> — <span data-price>4 990</span> ₽/мес, <span data-quota>100 статей</span> (штатные редакторы)</li>
+          <li data-plan="agency"><b>Agency</b> — <span data-price>12 990</span> ₽/мес, <span data-quota>300 статей</span> (контент-агентства)</li>
         </ul>
         Оплата картой или СБП через ЮKassa. Отменить подписку можно в любой момент.
       </div>
@@ -1698,6 +1698,60 @@
       particlesEl.appendChild(p)
     }
   }
+</script>
+
+<!-- Live plans from platform: rewrites FAQ pricing + JSON-LD offers on load.
+     Falls back silently to the static defaults above if the API is unreachable. -->
+<script>
+  (function(){
+    var API = 'https://www.medredactor.online/api/public/plans'
+    function fmtRub(n){ return Number(n).toLocaleString('ru-RU') }
+    function quotaLabel(n){
+      var last = n % 10, lastTwo = n % 100
+      if (n === 1) return '1 статья'
+      if (last === 1 && lastTwo !== 11) return n + ' статья'
+      if (last >= 2 && last <= 4 && (lastTwo < 12 || lastTwo > 14)) return n + ' статьи'
+      return n + ' статей'
+    }
+    fetch(API, { headers: { 'Accept': 'application/json' } })
+      .then(function(r){ return r.ok ? r.json() : null })
+      .then(function(data){
+        if (!data || !data.plans) return
+        var byId = {}
+        data.plans.forEach(function(p){ byId[p.id] = p })
+
+        document.querySelectorAll('#pricing-list li[data-plan]').forEach(function(li){
+          var id = li.getAttribute('data-plan')
+          var p = byId[id]; if (!p) return
+          var price = li.querySelector('[data-price]')
+          var quota = li.querySelector('[data-quota]')
+          if (price) price.textContent = fmtRub(p.priceRub)
+          if (quota) {
+            var q = Number(p.quota) || 0
+            quota.textContent = id === 'free' ? '1 статья в месяц' : quotaLabel(q)
+          }
+        })
+
+        var ldEl = document.getElementById('ld-software')
+        if (ldEl) {
+          try {
+            var ld = JSON.parse(ldEl.textContent)
+            if (Array.isArray(ld.offers)) {
+              ld.offers = ld.offers.map(function(o){
+                var p = byId[o.sku || (o.name || '').toLowerCase()]
+                if (!p) return o
+                return Object.assign({}, o, {
+                  price: String(p.priceRub),
+                  description: (p.quota === 1 ? '1 статья в месяц' : p.quota + ' статей в месяц')
+                })
+              })
+              ldEl.textContent = JSON.stringify(ld)
+            }
+          } catch(e) { /* keep original JSON-LD */ }
+        }
+      })
+      .catch(function(){ /* silent: static prices above remain */ })
+  })()
 </script>
 </body>
 </html>
