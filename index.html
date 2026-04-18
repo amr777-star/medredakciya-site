@@ -288,6 +288,9 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 18px 48px;
+    padding-top: max(18px, env(safe-area-inset-top));
+    padding-left: max(48px, env(safe-area-inset-left));
+    padding-right: max(48px, env(safe-area-inset-right));
     background: rgba(245,240,232,0.85);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
@@ -296,6 +299,9 @@
   }
   nav.scrolled {
     padding: 12px 48px;
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-left: max(48px, env(safe-area-inset-left));
+    padding-right: max(48px, env(safe-area-inset-right));
     box-shadow: 0 2px 20px rgba(26,39,68,0.08);
   }
   .nav-logo {
@@ -333,18 +339,21 @@
   /* Mobile menu */
   .nav-burger {
     display: none; background: none; border: none; cursor: pointer;
-    width: 32px; height: 24px; position: relative; flex-shrink: 0;
+    width: 44px; height: 44px; position: relative; flex-shrink: 0;
+    padding: 10px 6px;
+    -webkit-tap-highlight-color: transparent;
   }
   .nav-burger span {
     display: block; width: 100%; height: 2px; background: var(--navy);
     position: absolute; left: 0; transition: all 0.3s;
   }
-  .nav-burger span:nth-child(1) { top: 2px; }
-  .nav-burger span:nth-child(2) { top: 11px; }
-  .nav-burger span:nth-child(3) { top: 20px; }
-  .nav-burger.open span:nth-child(1) { top: 11px; transform: rotate(45deg); }
+  .nav-burger span { left: 6px; width: calc(100% - 12px); }
+  .nav-burger span:nth-child(1) { top: 14px; }
+  .nav-burger span:nth-child(2) { top: 21px; }
+  .nav-burger span:nth-child(3) { top: 28px; }
+  .nav-burger.open span:nth-child(1) { top: 21px; transform: rotate(45deg); }
   .nav-burger.open span:nth-child(2) { opacity: 0; }
-  .nav-burger.open span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
+  .nav-burger.open span:nth-child(3) { top: 21px; transform: rotate(-45deg); }
 
   .mobile-menu {
     display: none; position: fixed; top: 60px; left: 0; right: 0;
@@ -358,22 +367,30 @@
   .mobile-menu.open { transform: translateY(0); opacity: 1; }
   .mobile-menu a {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13px; letter-spacing: 0.06em;
+    font-size: 14px; letter-spacing: 0.06em;
     text-transform: uppercase; text-decoration: none;
-    color: var(--navy); padding: 12px 0;
+    color: var(--navy); padding: 16px 0;
+    min-height: 48px;
+    display: flex; align-items: center;
     border-bottom: 1px solid var(--border);
+    -webkit-tap-highlight-color: transparent;
   }
   .mobile-menu .nav-cta {
-    display: inline-block; text-align: center;
-    margin-top: 8px; padding: 14px 24px;
+    display: inline-flex; align-items: center; justify-content: center;
+    text-align: center;
+    margin-top: 12px; padding: 16px 24px;
+    min-height: 48px;
+    font-size: 14px;
   }
 
   /* — HERO — */
   .hero {
+    /* 100dvh handles mobile browser chrome collapse correctly; falls back to 100vh */
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
-    padding: 120px 48px 80px;
+    padding: max(120px, calc(100px + env(safe-area-inset-top))) max(48px, env(safe-area-inset-right)) 80px max(48px, env(safe-area-inset-left));
     position: relative; overflow: hidden;
   }
   .hero-bg {
@@ -392,7 +409,7 @@
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
   }
 
-  /* Floating particles */
+  /* Floating particles — decorative; hidden on mobile to save battery */
   .hero-particles {
     position: absolute; inset: 0; pointer-events: none; overflow: hidden;
   }
@@ -406,6 +423,9 @@
     10% { opacity: 0.12; }
     90% { opacity: 0.12; }
     100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+  }
+  @media (max-width: 720px) {
+    .hero-particles { display: none; }
   }
 
   .hero-badge {
@@ -456,8 +476,8 @@
     animation: fadeUp 0.6s 0.3s ease both;
   }
   .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 32px; background: var(--red);
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 16px 32px; min-height: 52px; background: var(--red);
     color: #fff; border: none; border-radius: 8px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px; letter-spacing: 0.06em;
@@ -466,6 +486,7 @@
     transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     box-shadow: 0 4px 20px rgba(200,51,78,0.3);
     position: relative; overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
   }
   .btn-primary::before {
     content: ''; position: absolute; inset: 0;
@@ -476,13 +497,14 @@
   .btn-primary:hover::before { opacity: 1; }
   .btn-primary:active { transform: translateY(0); }
   .btn-secondary {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 28px; background: transparent;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 16px 28px; min-height: 52px; background: transparent;
     color: var(--navy); border: 1.5px solid var(--border);
     border-radius: 8px; font-family: 'JetBrains Mono', monospace;
     font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
     cursor: pointer; text-decoration: none;
     transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    -webkit-tap-highlight-color: transparent;
   }
   .btn-secondary:hover { border-color: var(--navy); background: rgba(26,39,68,0.04); transform: translateY(-1px); }
 
@@ -973,9 +995,9 @@
     .nav-burger { display: block; }
     .mobile-menu { display: flex; }
     section { padding: 60px 24px; }
-    .hero { padding: 100px 24px 60px; min-height: auto; }
-    .hero-title { font-size: clamp(32px, 8vw, 48px); }
-    .hero-sub { font-size: 15px; }
+    .hero { padding: 100px 20px 60px; min-height: auto; }
+    .hero-title { font-size: clamp(28px, 8vw, 44px); max-width: 100%; word-break: break-word; overflow-wrap: break-word; hyphens: auto; padding: 0 4px; }
+    .hero-sub { font-size: 15px; max-width: 100%; padding: 0 4px; }
     .hero-actions { flex-direction: column; align-items: center; width: 100%; }
     .hero-actions .btn-primary,
     .hero-actions .btn-secondary { width: 100%; justify-content: center; }
@@ -1077,24 +1099,43 @@
     z-index: 90;
     background: rgba(245,240,232,0.96);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid var(--border);
-    padding: 10px 16px;
-    gap: 8px;
+    padding: 10px 14px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    gap: 10px;
+    /* iOS keyboard overlays this bar — users who tap CTA still see a visible target above the fold */
   }
   .sticky-cta a {
     flex: 1;
-    padding: 12px 14px;
+    min-height: 48px;
+    padding: 14px 14px;
     text-align: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    font-family: 'Golos Text','Segoe UI',sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     text-decoration: none;
-    border-radius: 2px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
   }
-  .sticky-cta .scta-primary { background: var(--red); color: #fff; }
-  .sticky-cta .scta-secondary { background: transparent; color: var(--navy); border: 1px solid var(--border); }
-  @media (max-width: 720px) { .sticky-cta { display: flex; } }
+  .sticky-cta .scta-primary { background: var(--red); color: #fff; box-shadow: 0 4px 14px rgba(200,51,78,0.25); }
+  .sticky-cta .scta-secondary { background: #fff; color: var(--navy); border: 1px solid var(--border); }
+  @media (max-width: 720px) {
+    .sticky-cta { display: flex; }
+    /* Lift page bottom so the last content isn't hidden under the CTA bar */
+    body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+    .faq { padding-bottom: 24px; }
+  }
+  @media (max-width: 340px) {
+    /* Extra-narrow phones: stack the two CTAs instead of squeezing them */
+    .sticky-cta { flex-wrap: wrap; padding-top: 8px; }
+    .sticky-cta a { flex-basis: 100%; padding: 12px 14px; min-height: 44px; }
+    body { padding-bottom: calc(128px + env(safe-area-inset-bottom)); }
+  }
 
   /* — FAQ — */
   .faq {
@@ -1111,6 +1152,7 @@
   .faq-item:hover { border-color: rgba(200,51,78,0.35); }
   .faq-q {
     width: 100%;
+    min-height: 56px;
     text-align: left;
     background: none; border: 0;
     padding: 22px 26px;
@@ -1120,6 +1162,7 @@
     line-height: 1.35;
     cursor: pointer;
     display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+    -webkit-tap-highlight-color: transparent;
   }
   .faq-q::after {
     content: '+';
@@ -1134,10 +1177,15 @@
   .faq-a {
     padding: 0 26px 22px;
     font-family: 'Golos Text', sans-serif;
-    font-size: 15px; line-height: 1.65;
+    font-size: 15px; line-height: 1.7;
     color: #3D5080;
   }
-  .faq-a a { color: var(--red); }
+  .faq-a a {
+    color: var(--red);
+    padding: 4px 2px;
+    margin: -4px -2px;
+    -webkit-tap-highlight-color: transparent;
+  }
   @media (max-width: 720px) {
     .faq { padding: 80px 20px 24px; }
     .faq-q { font-size: 16px; padding: 18px 20px; }
@@ -1176,10 +1224,13 @@
   .footer-col a, .footer-col span {
     display: block;
     font-family: 'Golos Text', sans-serif;
-    font-size: 13px; color: rgba(255,255,255,0.75);
+    font-size: 14px; color: rgba(255,255,255,0.75);
     text-decoration: none;
-    padding: 4px 0;
+    padding: 12px 0;
+    min-height: 44px;
+    line-height: 1.4;
     transition: color 0.15s;
+    -webkit-tap-highlight-color: transparent;
   }
   .footer-col a:hover { color: var(--red); }
   .footer-bottom {
@@ -1681,7 +1732,7 @@
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta">
   <a href="https://www.medredactor.online/pricing" class="scta-secondary">Тарифы</a>
-  <a href="https://www.medredactor.online/register" class="scta-primary">Начать бесплатно →</a>
+  <a href="https://www.medredactor.online/register" class="scta-primary">Начать →</a>
 </div>
 
 <script>
